@@ -1,0 +1,8 @@
+.header__container {
+    background-color: #aadac2;
+
+    height: 46px;
+
+    display: flex;
+    align-items: center;
+}
