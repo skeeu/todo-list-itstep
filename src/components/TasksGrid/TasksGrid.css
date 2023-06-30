@@ -1,0 +1,7 @@
+.tasks__container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-column-gap: 16px;
+
+    height: 100vh;
+}

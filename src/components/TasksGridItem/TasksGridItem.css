@@ -1,7 +1,9 @@
 .tasks__grid__item {
-    border: aquamarine 2px solid;
+    border-radius: 12px;
+    background: #896e69;
 }
 
 .tasks__header {
-    border-bottom: 1px aqua solid;
+    margin: 16px 0;
+    font-size: 24px;
 }

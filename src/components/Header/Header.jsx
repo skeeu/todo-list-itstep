@@ -1,11 +1,11 @@
 import Container from '../Container/Container';
 import './Header.css'
 
-function Header () {
+function Header ({ title }) {
     return (
         <div className="header__container">
             <Container>
-                <h3>Тестовое название страницы</h3>
+                <h3>{title}</h3>
             </Container>
         </div>
     )

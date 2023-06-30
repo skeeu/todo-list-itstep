@@ -1,11 +1,14 @@
 .task__box {
-    border-radius: 8px;
-    background-color: bisque;
+    border-radius: 12px;
+    background-color: #42313a;
+    box-shadow: -2px 7px 10px 1px rgba(34, 60, 80, 0.3);
 
-    width: 80%;
-    height: 32px;
+    width: 90%;
+    /* height: 32px; */
     
+    padding: 20px 0;
+    margin: 6px 0;
+
     text-align: center;
 
-    margin: 6px 0;
 }
