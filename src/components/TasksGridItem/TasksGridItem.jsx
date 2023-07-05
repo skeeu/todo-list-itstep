@@ -1,11 +1,11 @@
 import TaskBox from '../TaskBox/TaskBox';
-import './TasksGridItem.css'
+import styles from './TasksGridItem.module.css'
 
 
-function TasksGridItem({ name }) {
+function TasksGridItem({ name, tasks, type }) {
     return (
-        <div className="tasks__grid__item">
-            <div className='tasks__header'>
+        <div className={styles.tasks__grid__item}>
+            <div className={styles.tasks__header}>
                 {name}
             </div>
 
@@ -17,8 +17,15 @@ function TasksGridItem({ name }) {
                     flexDirection: 'column'
                 }}
             >
-                {[0, 1].map(el => {
-                    return <TaskBox key={el} />
+                {tasks
+                .filter(task => task.type === type)
+                .map(task => {
+                    return (
+                    <TaskBox 
+                        key={task.id}
+                        value={task.value} 
+                    />
+                    )
                 })}
             </div>
         </div>

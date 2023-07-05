@@ -1,10 +1,11 @@
 import Container from '../Container/Container';
-import './TaskInput.css'
+import styles from './TaskInput.module.css'
 import { IoIosAdd } from 'react-icons/io'
 import { useState } from 'react';
+import { TaskType } from '../../types/TaskType';
 
 
-function TaskInput() {
+function TaskInput({ tasks, setTasks }) {
     const [inputValue, setInputValue] = useState('')
 
     const inputChangeHandler = e => {
@@ -12,7 +13,18 @@ function TaskInput() {
     }
 
     const handleClick = () => {
-        console.log('Вы нажали на кнопку!')
+        if (inputValue) {
+            const newTask = {
+                id: tasks[tasks.length - 1].id + 1, 
+                value: inputValue, 
+                creationTime: new Date(),
+                type: TaskType['TODO']
+            }
+            setTasks(currVal => {
+                return [...currVal, newTask]
+            })
+            setInputValue('')
+        }
     }
 
     return (
@@ -29,10 +41,10 @@ function TaskInput() {
                     value={inputValue}
                     onChange={inputChangeHandler}
                     placeholder="Введите задачу"
-                    className='task__input'
+                    className={styles.task__input}
                 />
                 <button
-                    className='input__add_button'
+                    className={styles.input__add_button}
                     onClick={handleClick}
                 >
                     <IoIosAdd />

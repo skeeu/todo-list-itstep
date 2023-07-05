@@ -1,9 +1,17 @@
-import './TaskBox.css'
+import styles from './TaskBox.module.css'
+import { HiArrowSmRight } from 'react-icons/hi'
 
-function TaskBox () {
+function TaskBox ({ value }) {
     return (
-        <div className="task__box">
-            Some Content
+        <div className={styles.task__box}>
+            <div>
+                {value}
+            </div>
+            <button
+                className={styles.input__add_button}
+            >
+                <HiArrowSmRight />
+            </button>
         </div>
     )
 }

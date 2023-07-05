@@ -1,8 +1,8 @@
-import './Container.css'
+import styles from './Container.module.css'
 
 function Container({ children }) {
     return (
-        <div className="container">
+        <div className={styles.container}>
             {children}
         </div>
     )
